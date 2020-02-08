@@ -22,12 +22,28 @@ final class AccountViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(viewModel: viewModel)
         
-        //self.viewModel.delegate = self
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func openSign() {
+        print("openSign")
+    }
 
+    private func openVerify() {
+        print("openVerify")
+    }
+}
+
+//MARK: - AccountViewModelDelegate
+extension AccountViewController: AccountViewModelDelegate {
+    func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonCellViewModel.ButtonType) {
+        switch type {
+        case .sign: openSign()
+        case .verify: openVerify()
+        }
+    }
 }

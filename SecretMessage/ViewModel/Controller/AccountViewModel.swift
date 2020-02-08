@@ -9,22 +9,33 @@
 import UIKit
 import Web3swift
 
+protocol AccountViewModelDelegate: class {
+    func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonCellViewModel.ButtonType)
+}
+
 final class AccountViewModel: NSObject, BaseViewModelProtocol {
 
     let models: [CellViewModelProtocol]
     let address: EthereumAddress
     let balanceViewModel: InformationCellViewModel
+    
     private(set) var web3: web3? { didSet { updateBalance() }}
+    
+    weak var delegate: AccountViewModelDelegate?
     
     init(address: EthereumAddress, type: Web3Type = .local) {
         self.address = address
         self.balanceViewModel = InformationCellViewModel(title: "Balance", suffix: " Ether", showLoadingMessage: true)
         
+        let buttons = [ButtonCellViewModel(title: "Sign", buttonType: .sign), ButtonCellViewModel(title: "Verify", buttonType: .verify)]
+        
         self.models = [TitleCellViewModel(title: "Account"),
                        InformationCellViewModel(title: "Address", information: address.address, suffix: "Ed"),
-                       balanceViewModel]
+                       balanceViewModel] + buttons
         
         super.init()
+        
+        buttons.forEach { $0.delegate = self }
         
         updateWeb3(type: type)
     }
@@ -62,9 +73,16 @@ final class AccountViewModel: NSObject, BaseViewModelProtocol {
         }
     }
     
-    //MARK: -
+    //MARK: - Enum
     enum Web3Type {
         case local
         case rinkeby
+    }
+}
+
+//MARK: - ButtonCellViewModelDelegate
+extension AccountViewModel: ButtonCellViewModelDelegate {
+    func buttonCellViewModelDidSelect(_ model: ButtonCellViewModel) {
+        delegate?.accountViewModel(self, didSelectButton: model.buttonType)
     }
 }

@@ -26,6 +26,7 @@ enum CellType: String {
     case title
     case textField
     case information
+    case button
     
     var identifier: String {
         
@@ -33,6 +34,7 @@ enum CellType: String {
         case .title: return TitleTableViewCell.identifier
         case .textField: return TextFieldTableViewCell.identifier
         case .information: return InformationTableViewCell.identifier
+        case .button: return ButtonTableViewCell.identifier
         }
     }
 }
