@@ -30,6 +30,11 @@
 		03D29E9A23EE5CDF0097B82E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29E9923EE5CDF0097B82E /* BaseTableViewCell.swift */; };
 		03D29E9C23EE5EB30097B82E /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29E9B23EE5EB30097B82E /* TextFieldCellViewModel.swift */; };
 		03D29E9E23EF32070097B82E /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29E9D23EF32070097B82E /* AlertHelper.swift */; };
+		03D29EA123EF39740097B82E /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29E9F23EF39730097B82E /* InformationTableViewCell.swift */; };
+		03D29EA223EF39740097B82E /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D29EA023EF39730097B82E /* InformationTableViewCell.xib */; };
+		03D29EA423EF3B1A0097B82E /* InformationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EA323EF3B1A0097B82E /* InformationCellViewModel.swift */; };
+		03D29EA623EF3CA20097B82E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EA523EF3CA20097B82E /* AccountViewController.swift */; };
+		03D29EAA23EF3E2B0097B82E /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EA923EF3E2B0097B82E /* AccountViewModel.swift */; };
 		66425FDD797DAF0281387F9B /* Pods_SecretMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11BD6581354C5398821B488 /* Pods_SecretMessage.framework */; };
 		75F0B6F95E7B8EBB772130E4 /* Pods_SecretMessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF63502E023C1E5162EEAA7 /* Pods_SecretMessageTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +77,11 @@
 		03D29E9923EE5CDF0097B82E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		03D29E9B23EE5EB30097B82E /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		03D29E9D23EF32070097B82E /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		03D29E9F23EF39730097B82E /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
+		03D29EA023EF39730097B82E /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
+		03D29EA323EF3B1A0097B82E /* InformationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCellViewModel.swift; sourceTree = "<group>"; };
+		03D29EA523EF3CA20097B82E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		03D29EA923EF3E2B0097B82E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		05AD38BFA68DEA1ED92D43A5 /* Pods-SecretMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretMessage.debug.xcconfig"; path = "Target Support Files/Pods-SecretMessage/Pods-SecretMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		268E98199BB59C8D590265A0 /* Pods-SecretMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretMessage.release.xcconfig"; path = "Target Support Files/Pods-SecretMessage/Pods-SecretMessage.release.xcconfig"; sourceTree = "<group>"; };
 		3CF63502E023C1E5162EEAA7 /* Pods_SecretMessageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretMessageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +171,7 @@
 			children = (
 				03D29E7723EE39BD0097B82E /* BaseViewController.swift */,
 				03D29E8A23EE478F0097B82E /* LoginViewController.swift */,
+				03D29EA523EF3CA20097B82E /* AccountViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +218,8 @@
 				03D29E9523EE585B0097B82E /* TextFieldTableViewCell.swift */,
 				03D29E9623EE585B0097B82E /* TextFieldTableViewCell.xib */,
 				03D29E9923EE5CDF0097B82E /* BaseTableViewCell.swift */,
+				03D29E9F23EF39730097B82E /* InformationTableViewCell.swift */,
+				03D29EA023EF39730097B82E /* InformationTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -214,9 +227,8 @@
 		03D29E8723EE44590097B82E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				03D29E8823EE44700097B82E /* LoginViewModel.swift */,
-				03D29E8F23EE496A0097B82E /* TitleCellViewModel.swift */,
-				03D29E9B23EE5EB30097B82E /* TextFieldCellViewModel.swift */,
+				03D29EA823EF3D0D0097B82E /* Controller */,
+				03D29EA723EF3CFC0097B82E /* Cell */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,6 +241,25 @@
 				03D29E9323EE4CF70097B82E /* BaseCellProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		03D29EA723EF3CFC0097B82E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03D29E8F23EE496A0097B82E /* TitleCellViewModel.swift */,
+				03D29E9B23EE5EB30097B82E /* TextFieldCellViewModel.swift */,
+				03D29EA323EF3B1A0097B82E /* InformationCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		03D29EA823EF3D0D0097B82E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D29E8823EE44700097B82E /* LoginViewModel.swift */,
+				03D29EA923EF3E2B0097B82E /* AccountViewModel.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		03F2F644BC875C058D96808C /* Frameworks */ = {
@@ -335,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D29EA223EF39740097B82E /* InformationTableViewCell.xib in Resources */,
 				03D29E8423EE3F650097B82E /* TitleTableViewCell.xib in Resources */,
 				0355CFCF23EA2A1000F7432C /* LaunchScreen.storyboard in Resources */,
 				0355CFCC23EA2A1000F7432C /* Assets.xcassets in Resources */,
@@ -426,10 +458,14 @@
 				03D29E8323EE3F650097B82E /* TitleTableViewCell.swift in Sources */,
 				03D29E7E23EE3D680097B82E /* UIViewExtension.swift in Sources */,
 				03D29E7823EE39BE0097B82E /* BaseViewController.swift in Sources */,
+				03D29EA623EF3CA20097B82E /* AccountViewController.swift in Sources */,
 				03D29E9E23EF32070097B82E /* AlertHelper.swift in Sources */,
 				03D29E8623EE419E0097B82E /* UITableViewExtension.swift in Sources */,
+				03D29EAA23EF3E2B0097B82E /* AccountViewModel.swift in Sources */,
+				03D29EA123EF39740097B82E /* InformationTableViewCell.swift in Sources */,
 				03BAF2C723EBA1E600F95F6C /* ThreadHelper.swift in Sources */,
 				03D29E8923EE44700097B82E /* LoginViewModel.swift in Sources */,
+				03D29EA423EF3B1A0097B82E /* InformationCellViewModel.swift in Sources */,
 				03BAF2C523EB9EB400F95F6C /* Web3Helper.swift in Sources */,
 				03D29E9723EE585B0097B82E /* TextFieldTableViewCell.swift in Sources */,
 				03D29E9C23EE5EB30097B82E /* TextFieldCellViewModel.swift in Sources */,
