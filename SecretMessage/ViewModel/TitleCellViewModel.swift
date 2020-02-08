@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleCellViewModel: NSObject, CellViewModelProtocol {
+final class TitleCellViewModel: NSObject, CellViewModelProtocol {
 
     let title: String
     let type: CellType = .title

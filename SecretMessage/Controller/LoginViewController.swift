@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Web3swift
 
-class LoginViewController: BaseViewController {
+final class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +22,27 @@ class LoginViewController: BaseViewController {
     init(viewModel: LoginViewModel = LoginViewModel()) {
         self.viewModel = viewModel
         super.init(viewModel: viewModel)
+        
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func openAccountView(with address: EthereumAddress) {
+        print("address: \(address)")
     }
-    */
+}
 
+//MARK: - LoginViewModelDelegate
+extension LoginViewController: LoginViewModelDelegate {
+    func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumAddress, WalletError>) {
+        switch result {
+        case .success(let address):
+            openAccountView(with: address)
+        case .failure(_):
+            AlertHelper.showSimpleAlert(self, message: "Invalid private key")
+        }
+    }
 }

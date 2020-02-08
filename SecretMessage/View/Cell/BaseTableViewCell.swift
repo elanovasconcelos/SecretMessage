@@ -18,7 +18,5 @@ class BaseTableViewCell: UITableViewCell, BaseCellProtocol {
     }
 
     
-    func setup() {
-        
-    }
+    func setup() { }
 }

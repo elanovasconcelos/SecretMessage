@@ -8,15 +8,37 @@
 
 import UIKit
 
-class TextFieldTableViewCell: UITableViewCell, BaseCellProtocol {
+final class TextFieldTableViewCell: BaseTableViewCell {
     
-    var viewModel: CellViewModelProtocol?
-
+    @IBOutlet var textField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupTextField()
     }
 
+    override func setup() {
+        super.setup()
+        
+        guard let viewModel = viewModel else { return }
+        
+        textField.placeholder = viewModel.title
+    }
     
+    private func setupTextField() {
+        textField.returnKeyType = .done
+        textField.delegate = self
+    }
+}
+
+extension TextFieldTableViewCell: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        viewModel?.text.value = textField.text ?? ""
+        
+        return true
+    }
 }

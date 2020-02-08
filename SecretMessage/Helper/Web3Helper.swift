@@ -9,8 +9,10 @@
 import UIKit
 import Web3swift
 
-final class Web3Helper: NSObject {
+typealias PrivateKey = String
 
+final class Web3Helper: NSObject {
+    
     static func localNode(port: Int = 7545, completionHandler: @escaping (web3?) -> Void) {
         
         ThreadHelper.background {
@@ -31,12 +33,15 @@ final class Web3Helper: NSObject {
         }
     }
     
-    static func ethereumAddress(from privateKey: String, completionHandler: @escaping ([EthereumAddress]?) -> Void) {
+    static func ethereumAddress(from privateKey: PrivateKey, completionHandler: @escaping ([EthereumAddress]?) -> Void) {
         //TODO: maybe improve using Result<> and erro enum
         ThreadHelper.background {
             do {
-                let privateKeyData = Data.fromHex(privateKey)
-                let etheriumKeystore = try EthereumKeystoreV3.init(privateKey: privateKeyData!)
+                guard let privateKeyData = Data.fromHex(privateKey) else {
+                    completionHandler(nil)
+                    return
+                }
+                let etheriumKeystore = try EthereumKeystoreV3.init(privateKey: privateKeyData)
                 
                 completionHandler(etheriumKeystore?.addresses)
                 
@@ -105,4 +110,10 @@ final class Web3Helper: NSObject {
         //TODO: improve error
         print("[Web3Helper|\(place)]: \(error.localizedDescription)")
     }
+}
+
+//MARK: -
+
+enum WalletError: Error {
+    case privateKey
 }
