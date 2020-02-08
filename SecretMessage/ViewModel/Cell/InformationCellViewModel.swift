@@ -15,9 +15,12 @@ final class InformationCellViewModel: NSObject, CellViewModelProtocol {
     let text: Observable<String>
     let suffix: String
     
-    init(title: String, information: String = "", suffix: String = "") {
+    init(title: String, information: String = "", suffix: String = "", showLoadingMessage: Bool = false) {
         self.title = title
         self.suffix = suffix
-        self.text = Observable<String>(information + suffix)
+        
+        let finalText = showLoadingMessage ? "Loading..." : information + suffix
+        
+        self.text = Observable<String>(finalText)
     }
 }

@@ -31,8 +31,7 @@ final class LoginViewController: BaseViewController {
     }
     
     private func openAccountView(with address: EthereumAddress) {
-        print("address: \(address)")
-        
+
         let viewController = AccountViewController(viewModel: AccountViewModel(address: address, type: .local))
         let navigationController = UINavigationController(rootViewController: viewController)
         

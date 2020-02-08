@@ -24,6 +24,7 @@ final class InformationTableViewCell: BaseTableViewCell {
         guard let viewModel = viewModel else { return }
         
         titleLabel.text = viewModel.title
+        informationLabel.text = viewModel.text.value
         
         viewModel.text.valueChanged = { [weak self] text in
             

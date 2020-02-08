@@ -18,7 +18,7 @@ final class AccountViewModel: NSObject, BaseViewModelProtocol {
     
     init(address: EthereumAddress, type: Web3Type = .local) {
         self.address = address
-        self.balanceViewModel = InformationCellViewModel(title: "Balance", information: "Loading...", suffix: " Ether")
+        self.balanceViewModel = InformationCellViewModel(title: "Balance", suffix: " Ether", showLoadingMessage: true)
         
         self.models = [TitleCellViewModel(title: "Account"),
                        InformationCellViewModel(title: "Address", information: address.address, suffix: "Ed"),
