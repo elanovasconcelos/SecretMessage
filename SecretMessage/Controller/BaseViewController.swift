@@ -20,13 +20,18 @@ class BaseViewController: UIViewController {
 
         newTableView.rowHeight = UITableView.automaticDimension
         newTableView.estimatedRowHeight = 44
+        newTableView.separatorStyle = .none
         
         return newTableView
     }()
     
+    private let viewModel: BaseViewModelProtocol
+    
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
         
         setupTableView()
     }
@@ -42,6 +47,18 @@ class BaseViewController: UIViewController {
                               leading: view.safeAreaLayoutGuide.leadingAnchor,
                               bottom: view.safeAreaLayoutGuide.bottomAnchor,
                               trailing: view.safeAreaLayoutGuide.trailingAnchor)
+    }
+    
+    init(viewModel: BaseViewModelProtocol) {
+        self.viewModel = viewModel
+    
+        viewModel.register(tableView: tableView)
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 //    private func testSetup2() {
@@ -120,4 +137,24 @@ class BaseViewController: UIViewController {
     
 }
 
-
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfrows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let model = viewModel.models[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.identifier, for: indexPath) as! BaseCellProtocol
+        
+        cell.viewModel = model
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+}
