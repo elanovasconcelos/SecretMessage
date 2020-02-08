@@ -25,12 +25,14 @@ extension CellViewModelProtocol {
 enum CellType: String {
     case title
     case textField
+    case information
     
     var identifier: String {
         
         switch self {
         case .title: return TitleTableViewCell.identifier
         case .textField: return TextFieldTableViewCell.identifier
+        case .information: return InformationTableViewCell.identifier
         }
     }
 }

@@ -32,6 +32,14 @@ final class LoginViewController: BaseViewController {
     
     private func openAccountView(with address: EthereumAddress) {
         print("address: \(address)")
+        
+        let viewController = AccountViewController(viewModel: AccountViewModel(address: address, type: .local))
+        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.modalPresentationStyle = .fullScreen
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
@@ -40,7 +48,10 @@ extension LoginViewController: LoginViewModelDelegate {
     func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumAddress, WalletError>) {
         switch result {
         case .success(let address):
-            openAccountView(with: address)
+            ThreadHelper.main {
+                self.openAccountView(with: address)
+            }
+            
         case .failure(_):
             AlertHelper.showSimpleAlert(self, message: "Invalid private key")
         }

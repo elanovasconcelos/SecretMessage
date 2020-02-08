@@ -53,7 +53,13 @@ final class Web3Helper: NSObject {
         }
     }
     
-    static func balance(from address: EthereumAddress, web3: web3, completionHandler: @escaping (String?) -> Void) {
+    static func balance(from address: EthereumAddress, web3: web3?, completionHandler: @escaping (String?) -> Void) {
+        
+        guard let web3 = web3 else {
+            completionHandler(nil)
+            return
+        }
+        
         ThreadHelper.background {
             
             do {
