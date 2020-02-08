@@ -11,21 +11,43 @@ import UIKit
 protocol CellViewModelProtocol {
     var title: String { get }
     var type: CellType { get }
-    var subTitle: String { get }
+    var text: Observable<String> { get }
 }
 
+//MARK: -
 extension CellViewModelProtocol {
-    var subTitle: String { return "" }
+    var text: Observable<String> {
+        fatalError("not implemented")
+    }
 }
 
 //MARK: -
 enum CellType: String {
     case title
+    case textField
     
     var identifier: String {
         
         switch self {
         case .title: return TitleTableViewCell.identifier
+        case .textField: return TextFieldTableViewCell.identifier
         }
     }
 }
+
+//MARK: -
+class Observable<T> {
+    var value: T {
+        didSet {
+            ThreadHelper.main {
+                self.valueChanged?(self.value)
+            }
+        }
+    }
+    var valueChanged: ((T) -> Void)?
+    
+    init(_ value: T) {
+        self.value = value
+    }
+}
+
