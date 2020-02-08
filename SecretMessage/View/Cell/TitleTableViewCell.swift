@@ -8,14 +8,9 @@
 
 import UIKit
 
-//TODO: create BaseTableViewCell
-class TitleTableViewCell: UITableViewCell, BaseCellProtocol {
+final class TitleTableViewCell: BaseTableViewCell {
 
-    static let identifier = "TitleTableViewCell"
-    
     @IBOutlet var titleLabel: UILabel! //TODO: create BaseLabel
-    
-    var viewModel: CellViewModelProtocol? { didSet { setup() } }
     
     //MARK: -
     override func awakeFromNib() {
@@ -23,7 +18,9 @@ class TitleTableViewCell: UITableViewCell, BaseCellProtocol {
         // Initialization code
     }
 
-    func setup() {
+    override func setup() {
+        
+        super.setup()
         
         guard let viewModel = viewModel else { return }
         

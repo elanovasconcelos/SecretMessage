@@ -14,9 +14,6 @@ class BaseViewController: UIViewController {
     private let tableView: UITableView = {
        
         let newTableView = UITableView(frame: .zero)
-        
-        //newTableView.register(nibNameAndIdentifier: DetailTableViewCell.identifier)
-        //newTableView.register(nibNameAndIdentifier: WeatherImageTableViewCell.identifier)
 
         newTableView.rowHeight = UITableView.automaticDimension
         newTableView.estimatedRowHeight = 44

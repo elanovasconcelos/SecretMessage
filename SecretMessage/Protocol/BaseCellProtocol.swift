@@ -9,5 +9,12 @@
 import UIKit
 
 protocol BaseCellProtocol: UITableViewCell {
+    
     var viewModel: CellViewModelProtocol? { get set }
+    
+    static var identifier: String { get }
+}
+
+extension BaseCellProtocol {
+    static var identifier: String { return String(describing: self) }
 }
