@@ -48,6 +48,7 @@
 		03D29EC423EF9D950097B82E /* SignatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EC323EF9D950097B82E /* SignatureViewModel.swift */; };
 		03D29EC723EFACE70097B82E /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EC523EFACE70097B82E /* ImageTableViewCell.swift */; };
 		03D29EC823EFACE70097B82E /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D29EC623EFACE70097B82E /* ImageTableViewCell.xib */; };
+		03D29ECC23EFB5560097B82E /* ImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29ECB23EFB5550097B82E /* ImageCellViewModel.swift */; };
 		66425FDD797DAF0281387F9B /* Pods_SecretMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11BD6581354C5398821B488 /* Pods_SecretMessage.framework */; };
 		75F0B6F95E7B8EBB772130E4 /* Pods_SecretMessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF63502E023C1E5162EEAA7 /* Pods_SecretMessageTests.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +109,7 @@
 		03D29EC323EF9D950097B82E /* SignatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureViewModel.swift; sourceTree = "<group>"; };
 		03D29EC523EFACE70097B82E /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		03D29EC623EFACE70097B82E /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		03D29ECB23EFB5550097B82E /* ImageCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCellViewModel.swift; sourceTree = "<group>"; };
 		05AD38BFA68DEA1ED92D43A5 /* Pods-SecretMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretMessage.debug.xcconfig"; path = "Target Support Files/Pods-SecretMessage/Pods-SecretMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		268E98199BB59C8D590265A0 /* Pods-SecretMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretMessage.release.xcconfig"; path = "Target Support Files/Pods-SecretMessage/Pods-SecretMessage.release.xcconfig"; sourceTree = "<group>"; };
 		3CF63502E023C1E5162EEAA7 /* Pods_SecretMessageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretMessageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,6 +288,7 @@
 				03D29EA323EF3B1A0097B82E /* InformationCellViewModel.swift */,
 				03D29EAF23EF5AFF0097B82E /* ButtonCellViewModel.swift */,
 				03D29EBD23EF9C1A0097B82E /* MessageCellViewModel.swift */,
+				03D29ECB23EFB5550097B82E /* ImageCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				03D29EB423EF6CD30097B82E /* SigningViewModel.swift in Sources */,
 				03D29E9223EE4A310097B82E /* CellViewModelProtocol.swift in Sources */,
 				03D29E8323EE3F650097B82E /* TitleTableViewCell.swift in Sources */,
+				03D29ECC23EFB5560097B82E /* ImageCellViewModel.swift in Sources */,
 				03D29EB023EF5AFF0097B82E /* ButtonCellViewModel.swift in Sources */,
 				03D29EBE23EF9C1A0097B82E /* MessageCellViewModel.swift in Sources */,
 				03D29E7E23EE3D680097B82E /* UIViewExtension.swift in Sources */,
