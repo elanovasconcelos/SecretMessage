@@ -34,7 +34,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainViewController = LoginViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
 
-        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.navigationBar.barTintColor = .secondarySystemBackground
+        navigationController.navigationBar.isTranslucent = false
+        //navigationController.setNavigationBarHidden(true, animated: false)
         mainViewController.willMove(toParent: navigationController)
         
         return navigationController

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Web3swift
+
 
 final class SignatureViewModel: NSObject, BaseViewModelProtocol {
 
@@ -15,11 +17,22 @@ final class SignatureViewModel: NSObject, BaseViewModelProtocol {
     let signature: Data
     
     init(message: String, wallet: Wallet, signature: Data) {
-        
-        self.signature = signature
+
         self.wallet = wallet
+        
+        //qr code needs to be a string data
+        let signatureString = signature.toHexString()
+        let signatureStringData: Data
+        
+        if let newData = signatureString.data(using: .utf8) {
+            signatureStringData = newData
+        }else {
+            signatureStringData = signature
+        }
+        
+        self.signature = signatureStringData
         self.models = [TitleCellViewModel(title: "Signature"),
                        MessageCellViewModel(message: message),
-                       ImageCellViewModel(data: signature)]
+                       ImageCellViewModel(data: signatureStringData)]
     }
 }

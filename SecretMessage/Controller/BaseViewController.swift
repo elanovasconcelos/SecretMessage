@@ -18,6 +18,7 @@ class BaseViewController: UIViewController {
         newTableView.rowHeight = UITableView.automaticDimension
         newTableView.estimatedRowHeight = 44
         newTableView.separatorStyle = .none
+        newTableView.isScrollEnabled = false
         
         return newTableView
     }()

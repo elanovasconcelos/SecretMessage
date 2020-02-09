@@ -40,6 +40,7 @@ final class SigningViewModel: NSObject, BaseViewModelProtocol {
     
     func sign() {
         wallet.signPersonalMessage(message) {(result) in
+            
             self.delegate?.signingViewModel(self, didSignWith: result)
         }
     }

@@ -30,12 +30,15 @@ final class LoginViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func openAccountView(with address: EthereumAddress) {
+    private func openAccountView(with keystore: EthereumKeystoreV3) {
 
-        let viewController = AccountViewController(viewModel: AccountViewModel(address: address, type: .local))
+        let accountViewModel = AccountViewModel(keystore: keystore, type: .rinkeby)
+        let viewController = AccountViewController(viewModel: accountViewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.navigationBar.barTintColor = .secondarySystemBackground
+        navigationController.navigationBar.isTranslucent = false
+        //navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.modalPresentationStyle = .fullScreen
         
         self.present(navigationController, animated: true, completion: nil)
@@ -44,7 +47,7 @@ final class LoginViewController: BaseViewController {
 
 //MARK: - LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
-    func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumAddress, WalletError>) {
+    func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumKeystoreV3, WalletError>) {
         switch result {
         case .success(let address):
             ThreadHelper.main {

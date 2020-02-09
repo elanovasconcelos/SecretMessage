@@ -10,7 +10,7 @@ import UIKit
 import Web3swift
 
 protocol LoginViewModelDelegate: class {
-    func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumAddress, WalletError>)
+    func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumKeystoreV3, WalletError>)
 }
 
 final class LoginViewModel: NSObject, BaseViewModelProtocol {
@@ -37,7 +37,7 @@ final class LoginViewModel: NSObject, BaseViewModelProtocol {
         }
     }
     
-    func login(completionHandler: @escaping (Result<EthereumAddress, WalletError>) -> Void) {
+    func login(completionHandler: @escaping (Result<EthereumKeystoreV3, WalletError>) -> Void) {
 
         let privateKey = textFieldCellViewModel.text.value
         
@@ -46,13 +46,22 @@ final class LoginViewModel: NSObject, BaseViewModelProtocol {
             return
         }
         
-        Web3Helper.ethereumAddress(from: privateKey) { (addresses) in
-            if let address = addresses?.first {
-                completionHandler(.success(address))
+        Web3Helper.keystore(from: privateKey) { (ethereumKeystoreV3) in
+            
+            if let keystore = ethereumKeystoreV3 {
+                 completionHandler(.success(keystore))
             }else {
                 completionHandler(.failure(.privateKey))
             }
         }
+        
+//        Web3Helper.ethereumAddress(from: privateKey) { (addresses) in
+//            if let address = addresses?.first {
+//                completionHandler(.success(address))
+//            }else {
+//                completionHandler(.failure(.privateKey))
+//            }
+//        }
     }
     
     /*

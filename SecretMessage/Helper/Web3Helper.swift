@@ -53,6 +53,26 @@ final class Web3Helper: NSObject {
         }
     }
     
+    static func keystore(from privateKey: PrivateKey, completionHandler: @escaping (EthereumKeystoreV3?) -> Void) {
+        //TODO: maybe improve using Result<> and erro enum
+        ThreadHelper.background {
+            do {
+                guard let privateKeyData = Data.fromHex(privateKey) else {
+                    completionHandler(nil)
+                    return
+                }
+                let etheriumKeystore = try EthereumKeystoreV3.init(privateKey: privateKeyData)
+                
+                completionHandler(etheriumKeystore)
+                
+            } catch  {
+                log(error, place: "keystore")
+                
+                completionHandler(nil)
+            }
+        }
+    }
+    
     static func balance(from address: EthereumAddress, web3: web3?, completionHandler: @escaping (String?) -> Void) {
         
         guard let web3 = web3 else {

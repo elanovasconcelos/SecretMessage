@@ -30,7 +30,10 @@ final class VerificationViewController: BaseViewController {
     }
     
     private func openCamera() {
+        let cameraViewModel = CameraViewModel(wallet: viewModel.wallet, message: viewModel.message)
+        let controller = CameraViewController(viewModel: cameraViewModel)
         
+        openController(controller)
     }
 }
 
