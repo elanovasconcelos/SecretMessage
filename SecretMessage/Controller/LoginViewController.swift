@@ -34,11 +34,8 @@ final class LoginViewController: BaseViewController {
 
         let accountViewModel = AccountViewModel(keystore: keystore, type: .rinkeby)
         let viewController = AccountViewController(viewModel: accountViewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
-        navigationController.navigationBar.barTintColor = .secondarySystemBackground
-        navigationController.navigationBar.isTranslucent = false
-        //navigationController.setNavigationBarHidden(true, animated: false)
+        let navigationController = BaseNavigationController(rootViewController: viewController)
+
         navigationController.modalPresentationStyle = .fullScreen
         
         self.present(navigationController, animated: true, completion: nil)
