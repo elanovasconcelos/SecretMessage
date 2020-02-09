@@ -29,6 +29,12 @@ final class TextFieldTableViewCell: BaseTableViewCell {
     private func setupTextField() {
         textField.returnKeyType = .done
         textField.delegate = self
+        
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        viewModel?.text.value = textField.text ?? ""
     }
 }
 

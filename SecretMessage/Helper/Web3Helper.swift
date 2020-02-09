@@ -120,6 +120,4 @@ final class Web3Helper: NSObject {
 
 //MARK: -
 
-enum WalletError: Error {
-    case privateKey
-}
+
