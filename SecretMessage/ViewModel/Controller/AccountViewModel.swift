@@ -10,7 +10,7 @@ import UIKit
 import Web3swift
 
 protocol AccountViewModelDelegate: class {
-    func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonCellViewModel.ButtonType)
+    func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonType)
 }
 
 final class AccountViewModel: NSObject, BaseViewModelProtocol {

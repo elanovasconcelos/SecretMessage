@@ -29,9 +29,10 @@ final class ButtonCellViewModel: NSObject, CellViewModelProtocol {
     func buttonSelected() {
         delegate?.buttonCellViewModelDidSelect(self)
     }
-    
-    enum ButtonType {
-        case sign
-        case verify
-    }
+}
+
+//MARK: - 
+enum ButtonType {
+    case sign
+    case verify
 }

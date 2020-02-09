@@ -30,28 +30,35 @@ final class AccountViewController: BaseViewController {
     }
     
     private func openSign() {
-        print("openSign")
         
         if let wallet = viewModel.wallet {
             let controller = SigningViewController(viewModel: SigningViewModel(wallet: wallet))
 
             openController(controller)
         }else {
-            AlertHelper.showSimpleAlert(self, message: "No valid Wallet")
+            showWalletError()
         }
-        
     }
 
     private func openVerify() {
-        print("openVerify")
+        if let wallet = viewModel.wallet {
+            let controller = VerificationViewController(viewModel: VerificationViewModel(wallet: wallet))
+
+            openController(controller)
+        }else {
+            showWalletError()
+        }
     }
     
+    private func showWalletError() {
+        AlertHelper.showSimpleAlert(self, message: "No valid Wallet")
+    }
     
 }
 
 //MARK: - AccountViewModelDelegate
 extension AccountViewController: AccountViewModelDelegate {
-    func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonCellViewModel.ButtonType) {
+    func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonType) {
         switch type {
         case .sign: openSign()
         case .verify: openVerify()
