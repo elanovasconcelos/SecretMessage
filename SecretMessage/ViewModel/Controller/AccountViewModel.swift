@@ -40,6 +40,13 @@ final class AccountViewModel: NSObject, BaseViewModelProtocol {
         updateWeb3(type: type)
     }
     
+    var wallet: Wallet? {
+        
+        guard let web3 = web3 else { return nil }
+        
+        return Wallet(web3: web3, address: address)
+    }
+    
     private func updateWeb3(type: Web3Type) {
         
         switch type {

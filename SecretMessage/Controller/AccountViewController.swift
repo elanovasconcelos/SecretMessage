@@ -31,11 +31,22 @@ final class AccountViewController: BaseViewController {
     
     private func openSign() {
         print("openSign")
+        
+        if let wallet = viewModel.wallet {
+            let controller = SigningViewController(viewModel: SigningViewModel(wallet: wallet))
+
+            openController(controller)
+        }else {
+            AlertHelper.showSimpleAlert(self, message: "No valid Wallet")
+        }
+        
     }
 
     private func openVerify() {
         print("openVerify")
     }
+    
+    
 }
 
 //MARK: - AccountViewModelDelegate

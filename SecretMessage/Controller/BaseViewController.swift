@@ -33,7 +33,6 @@ class BaseViewController: UIViewController {
     }
 
     //MARK: -
-    
     private func setupController() {
         view.backgroundColor = .systemBackground
     }
@@ -60,6 +59,14 @@ class BaseViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: -
+extension BaseViewController {
+    func openController(_ controller: UIViewController) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

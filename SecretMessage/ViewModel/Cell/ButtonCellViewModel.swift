@@ -20,7 +20,7 @@ final class ButtonCellViewModel: NSObject, CellViewModelProtocol {
     
     weak var delegate: ButtonCellViewModelDelegate?
     
-    init(title: String, delegate: ButtonCellViewModelDelegate? = nil, buttonType: ButtonType) {
+    init(title: String, delegate: ButtonCellViewModelDelegate? = nil, buttonType: ButtonType = .sign) {
         self.title = title
         self.delegate = delegate
         self.buttonType = buttonType
