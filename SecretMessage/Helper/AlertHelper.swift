@@ -10,13 +10,13 @@ import UIKit
 
 final class AlertHelper: NSObject {
 
-    static func showSimpleAlert(_ controller: UIViewController?, title: String? = nil, message: String, closure: @escaping () -> Void = { })
+    static func showSimpleAlert(_ controller: UIViewController?, title: String? = nil, message: String, completionHandler: @escaping () -> Void = { })
     {
         ThreadHelper.main {
             let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                closure()
+                completionHandler()
             }))
             
             present(controller: controller, alert: refreshAlert)

@@ -18,6 +18,8 @@ final class SignatureViewModel: NSObject, BaseViewModelProtocol {
         
         self.signature = signature
         self.wallet = wallet
-        self.models = [TitleCellViewModel(title: "Signature"), MessageCellViewModel(message: message)]
+        self.models = [TitleCellViewModel(title: "Signature"),
+                       MessageCellViewModel(message: message),
+                       ImageCellViewModel(data: signature)]
     }
 }

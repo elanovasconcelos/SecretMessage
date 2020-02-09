@@ -12,11 +12,27 @@ protocol CellViewModelProtocol {
     var title: String { get }
     var type: CellType { get }
     var text: Observable<String> { get }
+    var image: Observable<UIImage?> { get }
+    
+    func buttonSelected()
 }
 
 //MARK: -
 extension CellViewModelProtocol {
+    
+    var title: String {
+        fatalError("not implemented")
+    }
+    
     var text: Observable<String> {
+        fatalError("not implemented")
+    }
+    
+    func buttonSelected() {
+        fatalError("not implemented")
+    }
+    
+    var image: Observable<UIImage?> {
         fatalError("not implemented")
     }
 }
@@ -28,6 +44,7 @@ enum CellType: String {
     case information
     case button
     case message
+    case image
     
     var identifier: String {
         
@@ -37,6 +54,7 @@ enum CellType: String {
         case .information: return InformationTableViewCell.identifier
         case .button: return ButtonTableViewCell.identifier
         case .message: return MessageTableViewCell.identifier
+        case .image: return ImageTableViewCell.identifier
         }
     }
 }
