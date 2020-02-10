@@ -11,7 +11,6 @@
 		0355CFC523EA2A0E00F7432C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355CFC423EA2A0E00F7432C /* SceneDelegate.swift */; };
 		0355CFCC23EA2A1000F7432C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0355CFCB23EA2A1000F7432C /* Assets.xcassets */; };
 		0355CFCF23EA2A1000F7432C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0355CFCD23EA2A1000F7432C /* LaunchScreen.storyboard */; };
-		0355CFDA23EA2A1000F7432C /* SecretMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355CFD923EA2A1000F7432C /* SecretMessageTests.swift */; };
 		03BAF2C523EB9EB400F95F6C /* Web3Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BAF2C423EB9EB400F95F6C /* Web3Helper.swift */; };
 		03BAF2C723EBA1E600F95F6C /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BAF2C623EBA1E600F95F6C /* ThreadHelper.swift */; };
 		03D29E7823EE39BE0097B82E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29E7723EE39BD0097B82E /* BaseViewController.swift */; };
@@ -55,6 +54,8 @@
 		03D29ED423F077CF0097B82E /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29ED323F077CF0097B82E /* CameraViewModel.swift */; };
 		03D29ED623F0C38B0097B82E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29ED523F0C38B0097B82E /* UIColorExtension.swift */; };
 		03D29ED823F0C57B0097B82E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29ED723F0C57A0097B82E /* BaseNavigationController.swift */; };
+		03D29EDC23F0C7B10097B82E /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EDB23F0C7B10097B82E /* LoginViewModelTests.swift */; };
+		03D29EE123F0CC050097B82E /* MockLoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D29EE023F0CC050097B82E /* MockLoginViewModelDelegate.swift */; };
 		66425FDD797DAF0281387F9B /* Pods_SecretMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11BD6581354C5398821B488 /* Pods_SecretMessage.framework */; };
 		75F0B6F95E7B8EBB772130E4 /* Pods_SecretMessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF63502E023C1E5162EEAA7 /* Pods_SecretMessageTests.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +78,6 @@
 		0355CFCE23EA2A1000F7432C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0355CFD023EA2A1000F7432C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0355CFD523EA2A1000F7432C /* SecretMessageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecretMessageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0355CFD923EA2A1000F7432C /* SecretMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretMessageTests.swift; sourceTree = "<group>"; };
 		0355CFDB23EA2A1000F7432C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03BAF2C423EB9EB400F95F6C /* Web3Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Helper.swift; sourceTree = "<group>"; };
 		03BAF2C623EBA1E600F95F6C /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
@@ -122,6 +122,8 @@
 		03D29ED323F077CF0097B82E /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		03D29ED523F0C38B0097B82E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		03D29ED723F0C57A0097B82E /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		03D29EDB23F0C7B10097B82E /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		03D29EE023F0CC050097B82E /* MockLoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelDelegate.swift; sourceTree = "<group>"; };
 		05AD38BFA68DEA1ED92D43A5 /* Pods-SecretMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretMessage.debug.xcconfig"; path = "Target Support Files/Pods-SecretMessage/Pods-SecretMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		268E98199BB59C8D590265A0 /* Pods-SecretMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretMessage.release.xcconfig"; path = "Target Support Files/Pods-SecretMessage/Pods-SecretMessage.release.xcconfig"; sourceTree = "<group>"; };
 		3CF63502E023C1E5162EEAA7 /* Pods_SecretMessageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretMessageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +193,8 @@
 		0355CFD823EA2A1000F7432C /* SecretMessageTests */ = {
 			isa = PBXGroup;
 			children = (
-				0355CFD923EA2A1000F7432C /* SecretMessageTests.swift */,
+				03D29EDF23F0CBE30097B82E /* Mock */,
+				03D29ED923F0C6F60097B82E /* ViewModel */,
 				0355CFDB23EA2A1000F7432C /* Info.plist */,
 			);
 			path = SecretMessageTests;
@@ -336,6 +339,30 @@
 				03D29EB723EF6EAC0097B82E /* Wallet.swift */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		03D29ED923F0C6F60097B82E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03D29EDA23F0C7990097B82E /* Controller */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03D29EDA23F0C7990097B82E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D29EDB23F0C7B10097B82E /* LoginViewModelTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D29EDF23F0CBE30097B82E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				03D29EE023F0CC050097B82E /* MockLoginViewModelDelegate.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		03F2F644BC875C058D96808C /* Frameworks */ = {
@@ -577,7 +604,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0355CFDA23EA2A1000F7432C /* SecretMessageTests.swift in Sources */,
+				03D29EE123F0CC050097B82E /* MockLoginViewModelDelegate.swift in Sources */,
+				03D29EDC23F0C7B10097B82E /* LoginViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,19 +54,7 @@ final class LoginViewModel: NSObject, BaseViewModelProtocol {
                 completionHandler(.failure(.privateKey))
             }
         }
-        
-//        Web3Helper.ethereumAddress(from: privateKey) { (addresses) in
-//            if let address = addresses?.first {
-//                completionHandler(.success(address))
-//            }else {
-//                completionHandler(.failure(.privateKey))
-//            }
-//        }
     }
-    
-    /*
-     call delegate
-     */
 }
 
 
