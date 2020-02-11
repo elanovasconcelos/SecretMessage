@@ -14,12 +14,11 @@ class LoginViewModelTests: XCTestCase {
     private var loginViewModel: LoginViewModel!
     
     override func setUp() {
-        super.setUp()
         loginViewModel = LoginViewModel()
     }
 
     override func tearDown() {
-        super.tearDown()
+        
     }
 
     func testModels() {
