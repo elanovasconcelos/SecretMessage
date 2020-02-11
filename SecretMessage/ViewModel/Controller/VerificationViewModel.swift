@@ -32,16 +32,31 @@ final class VerificationViewModel: NSObject, BaseViewModelProtocol {
         super.init()
         
         verifyButton.delegate = self
+        textFieldCellViewModel.delegate = self
     }
     
+    private func didSelectButton(with type: ButtonType) {
+        delegate?.verificationViewModel(self, didSelectButton: type)
+    }
+}
+
+//MARK: -
+extension VerificationViewModel {
     var message: String {
         return textFieldCellViewModel.text.value
     }
 }
 
-//MARK: -
+//MARK: - ButtonCellViewModelDelegate
 extension VerificationViewModel: ButtonCellViewModelDelegate {
     func buttonCellViewModelDidSelect(_ model: ButtonCellViewModel) {
-        delegate?.verificationViewModel(self, didSelectButton: model.buttonType)
+        didSelectButton(with: model.buttonType)
+    }
+}
+
+//MARK: - TextFieldCellViewModelDelegate
+extension VerificationViewModel: TextFieldCellViewModelDelegate {
+    func textFieldCellViewModel(_ model: TextFieldCellViewModel, didKeyboardReturnsWith text: String) {
+        didSelectButton(with: .verify)
     }
 }
