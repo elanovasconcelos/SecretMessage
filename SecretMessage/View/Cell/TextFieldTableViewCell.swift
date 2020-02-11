@@ -33,6 +33,10 @@ final class TextFieldTableViewCell: BaseTableViewCell {
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
+    func closeKeyboard() {
+        textField.resignFirstResponder()
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         viewModel?.text.value = textField.text ?? ""
     }
@@ -41,7 +45,7 @@ final class TextFieldTableViewCell: BaseTableViewCell {
 extension TextFieldTableViewCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        closeKeyboard()
         
         viewModel?.text.value = textField.text ?? ""
         viewModel?.eventSelected()

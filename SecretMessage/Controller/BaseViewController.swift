@@ -78,6 +78,12 @@ class BaseViewController: UIViewController {
 // MARK: -
 extension BaseViewController {
     
+    func closeKeyboard() {
+        ThreadHelper.main {
+            self.tableView.endEditing(false)
+        }
+    }
+    
     func clearTitle() {
         title = ""
     }

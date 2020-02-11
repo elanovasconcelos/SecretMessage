@@ -12,12 +12,7 @@ final class SigningViewController: BaseViewController {
 
     private let viewModel: SigningViewModel
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
+    //MARK: -
     init(viewModel: SigningViewModel) {
         self.viewModel = viewModel
         super.init(viewModel: viewModel)
@@ -29,9 +24,9 @@ final class SigningViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK: - 
     private func openSignature(with data: Data) {
-        
-        print("viewModel.message: \(viewModel.message)")
+
         let model = SignatureViewModel(message: viewModel.message, wallet: viewModel.wallet, signature: data)
         
         ThreadHelper.main {
@@ -46,7 +41,9 @@ final class SigningViewController: BaseViewController {
 extension SigningViewController: SigningViewModelDelegate {
     func signingViewModel(_ model: SigningViewModel, didSignWith result: Result<Data, WalletError>) {
         switch result {
-        case .success(let data): openSignature(with: data)
+        case .success(let data):
+            closeKeyboard()
+            openSignature(with: data)
         case .failure(_): AlertHelper.showSimpleAlert(self, message: "Invalid message")
         }
     }

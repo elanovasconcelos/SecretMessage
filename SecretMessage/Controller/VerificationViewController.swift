@@ -40,6 +40,7 @@ final class VerificationViewController: BaseViewController {
 //MARK: -
 extension VerificationViewController: VerificationViewModelDelegate {
     func verificationViewModel(_ model: VerificationViewModel, didSelectButton type: ButtonType) {
+        closeKeyboard()
         openCamera()
     }
 }
