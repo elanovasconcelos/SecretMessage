@@ -92,8 +92,12 @@ final class CameraViewController: UIViewController {
         //titleContainerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
     }
     
+    private func back() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func showCheckResult(_ result: Bool) {
-        AlertHelper.showSimpleAlert(self, message:  result ? "Signature is valid" : "Signature is invalid")
+        AlertHelper.showSimpleAlert(self, message:  result ? "Signature is valid" : "Signature is invalid", completionHandler: back)
     }
     
     private func showGenericError() {
