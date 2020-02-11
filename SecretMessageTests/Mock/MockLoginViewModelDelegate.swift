@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 @testable import SecretMessage
 
 class MockLoginViewModelDelegate: NSObject, LoginViewModelDelegate {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 
 typealias PrivateKey = String
 

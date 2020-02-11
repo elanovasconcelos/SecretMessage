@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 
 protocol LoginViewModelDelegate: class {
     func loginViewModel(_ model: LoginViewModel?, didLoginWith result: Result<EthereumKeystoreV3, WalletError>)

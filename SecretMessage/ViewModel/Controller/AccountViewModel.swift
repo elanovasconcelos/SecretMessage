@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 
 protocol AccountViewModelDelegate: class {
     func accountViewModel(_ model: AccountViewModel, didSelectButton type: ButtonType)

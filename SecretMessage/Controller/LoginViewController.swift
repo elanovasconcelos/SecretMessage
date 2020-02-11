@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 
 final class LoginViewController: BaseViewController {
     
