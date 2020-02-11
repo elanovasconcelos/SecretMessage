@@ -17,7 +17,6 @@ final class Web3Helper: NSObject {
         
         ThreadHelper.background {
             do {
-                //TODO continue: to background
                 guard let url = URL(string: "http://127.0.0.1:\(port)") else {
                     completionHandler(nil)
                     return
@@ -81,7 +80,6 @@ final class Web3Helper: NSObject {
         }
         
         ThreadHelper.background {
-            
             do {
                 let balancebigint = try web3.eth.getBalance(address: address)
                 completionHandler(Web3.Utils.formatToEthereumUnits(balancebigint))
@@ -137,7 +135,3 @@ final class Web3Helper: NSObject {
         print("[Web3Helper|\(place)]: \(error.localizedDescription)")
     }
 }
-
-//MARK: -
-
-
