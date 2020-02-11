@@ -44,6 +44,7 @@ extension TextFieldTableViewCell: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         viewModel?.text.value = textField.text ?? ""
+        viewModel?.eventSelected()
         
         return true
     }

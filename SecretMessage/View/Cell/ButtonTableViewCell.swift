@@ -22,7 +22,7 @@ final class ButtonTableViewCell: BaseTableViewCell {
     }
     
     @IBAction func selectButton(_ sender: Any) {
-        viewModel?.buttonSelected()
+        viewModel?.eventSelected()
     }
     
     

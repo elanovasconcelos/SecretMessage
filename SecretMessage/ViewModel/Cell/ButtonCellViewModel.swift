@@ -26,7 +26,7 @@ final class ButtonCellViewModel: NSObject, CellViewModelProtocol {
         self.buttonType = buttonType
     }
     
-    func buttonSelected() {
+    func eventSelected() {
         delegate?.buttonCellViewModelDidSelect(self)
     }
 }

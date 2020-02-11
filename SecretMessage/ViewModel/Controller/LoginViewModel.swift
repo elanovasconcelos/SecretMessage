@@ -26,7 +26,8 @@ final class LoginViewModel: NSObject, BaseViewModelProtocol {
         
         super.init()
         
-        bind()
+        textFieldCellViewModel.delegate = self
+        //bind()
     }
     
     private func bind() {
@@ -57,4 +58,11 @@ final class LoginViewModel: NSObject, BaseViewModelProtocol {
     }
 }
 
-
+extension LoginViewModel: TextFieldCellViewModelDelegate {
+    func textFieldCellViewModel(_ model: TextFieldCellViewModel, didKeyboardReturnsWith text: String) {
+        
+        login() { (result) in
+            self.delegate?.loginViewModel(self, didLoginWith: result)
+        }
+    }
+}

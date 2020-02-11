@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="314" height="73"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="42c521d5630bedc9a408725ad7f11690999c125a1fcebe248f24b6b6d8766c17" borderStyle="roundedRect" placeholder="Private key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOw-zp-9of">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Private key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOw-zp-9of">
                         <rect key="frame" x="16" y="11" width="282" height="51"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>

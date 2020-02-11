@@ -14,7 +14,9 @@ protocol CellViewModelProtocol {
     var text: Observable<String> { get }
     var image: Observable<UIImage?> { get }
     
-    func buttonSelected()
+    
+    /// Used for user events: button pressed or the keyboard return button pressed
+    func eventSelected()
 }
 
 //MARK: -
@@ -28,7 +30,7 @@ extension CellViewModelProtocol {
         fatalError("not implemented")
     }
     
-    func buttonSelected() {
+    func eventSelected() {
         fatalError("not implemented")
     }
     
