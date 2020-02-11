@@ -10,15 +10,17 @@ import UIKit
 import Web3swift
 
 final class LoginViewController: BaseViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     private let viewModel: LoginViewModel
 
+    //MARK: -
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        clearTitle()
+    }
+    
+    //MARK: -
     init(viewModel: LoginViewModel = LoginViewModel()) {
         self.viewModel = viewModel
         super.init(viewModel: viewModel)
@@ -51,7 +53,8 @@ extension LoginViewController: LoginViewModelDelegate {
                 self.openAccountView(with: address)
             }
             
-        case .failure(_):
+        case .failure(let error):
+            print("[LoginViewController]: \(error.localizedDescription)")
             AlertHelper.showSimpleAlert(self, message: "Invalid private key")
         }
     }

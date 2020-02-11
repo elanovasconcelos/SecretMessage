@@ -33,6 +33,18 @@ class BaseViewController: UIViewController {
         setupTableView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        clearTitle()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        updateTitle()
+    }
+    
     //MARK: -
     private func setupController() {
         view.backgroundColor = .systemBackground
@@ -65,6 +77,17 @@ class BaseViewController: UIViewController {
 
 // MARK: -
 extension BaseViewController {
+    
+    func clearTitle() {
+        title = ""
+    }
+    
+    func updateTitle() {
+        if viewModel.models.count > 0 {
+            title = viewModel.models[0].title
+        }
+    }
+    
     func openController(_ controller: UIViewController) {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.pushViewController(controller, animated: true)

@@ -10,12 +10,6 @@ import UIKit
 
 final class AccountViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     private let viewModel: AccountViewModel
 
     init(viewModel: AccountViewModel) {
