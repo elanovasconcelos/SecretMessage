@@ -35,7 +35,7 @@ final class CameraViewController: UIViewController {
         
         let newView = UIView(frame: .zero)
         
-        newView.backgroundColor = .red
+        newView.backgroundColor = .black
         
         return newView
     }()
@@ -50,12 +50,15 @@ final class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("CameraViewController - viewDidLoad")
         setupViews()
-        
-        viewModel.addCamera(to: view)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.addCamera(to: cameraContainerView)
+    }
+    
+    //MARK: - 
     init(viewModel: CameraViewModel) {
         self.viewModel = viewModel
         
@@ -87,9 +90,8 @@ final class CameraViewController: UIViewController {
         titleLabel.anchor(top: titleContainerView.topAnchor,
                           leading: titleContainerView.leadingAnchor,
                           bottom: titleContainerView.bottomAnchor,
-                          trailing: titleContainerView.trailingAnchor, value: 8)
-        
-        //titleContainerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
+                          trailing: titleContainerView.trailingAnchor,
+                          padding: .init(top: 11, left: 15, bottom: 11, right: 15))
     }
     
     private func back() {

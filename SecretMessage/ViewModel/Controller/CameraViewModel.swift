@@ -32,6 +32,11 @@ final class CameraViewModel: NSObject {
     }
     
     func addCamera(to view: UIView) {
+        
+        if previewLayer != nil {
+            return
+        }
+        
         if setup() {
             previewLayer?.frame = view.layer.bounds
             view.layer.addSublayer(previewLayer!)
