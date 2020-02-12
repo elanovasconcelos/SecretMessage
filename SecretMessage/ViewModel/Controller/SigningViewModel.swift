@@ -32,6 +32,7 @@ final class SigningViewModel: NSObject, BaseViewModelProtocol {
         super.init()
         
         signButton.delegate = self
+        textFieldCellViewModel.delegate = self
     }
     
     var message: String {
@@ -46,9 +47,16 @@ final class SigningViewModel: NSObject, BaseViewModelProtocol {
     }
 }
 
-//MARK: -
+//MARK: - ButtonCellViewModelDelegate
 extension SigningViewModel: ButtonCellViewModelDelegate {
     func buttonCellViewModelDidSelect(_ model: ButtonCellViewModel) {
+        sign()
+    }
+}
+
+//MARK: - TextFieldCellViewModelDelegate
+extension SigningViewModel: TextFieldCellViewModelDelegate {
+    func textFieldCellViewModel(_ model: TextFieldCellViewModel, didKeyboardReturnsWith text: String) {
         sign()
     }
 }
