@@ -27,15 +27,6 @@ final class LoginViewModel: NSObject, BaseViewModelProtocol {
         super.init()
         
         textFieldCellViewModel.delegate = self
-        //bind()
-    }
-    
-    private func bind() {
-        textFieldCellViewModel.text.valueChanged = { [weak self] text in
-            self?.login(completionHandler: { (result) in
-                self?.delegate?.loginViewModel(self, didLoginWith: result)
-            })
-        }
     }
     
     func login(completionHandler: @escaping (Result<EthereumKeystoreV3, WalletError>) -> Void) {
