@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03149A7223F374DF00C8B487 /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03149A7123F374DF00C8B487 /* AccountViewModelTests.swift */; };
 		0355CFC323EA2A0E00F7432C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355CFC223EA2A0E00F7432C /* AppDelegate.swift */; };
 		0355CFC523EA2A0E00F7432C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355CFC423EA2A0E00F7432C /* SceneDelegate.swift */; };
 		0355CFCC23EA2A1000F7432C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0355CFCB23EA2A1000F7432C /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03149A7123F374DF00C8B487 /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
 		0355CFBF23EA2A0E00F7432C /* SecretMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0355CFC223EA2A0E00F7432C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0355CFC423EA2A0E00F7432C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				03D29EDB23F0C7B10097B82E /* LoginViewModelTests.swift */,
+				03149A7123F374DF00C8B487 /* AccountViewModelTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03149A7223F374DF00C8B487 /* AccountViewModelTests.swift in Sources */,
 				03D29EE123F0CC050097B82E /* MockLoginViewModelDelegate.swift in Sources */,
 				03D29EDC23F0C7B10097B82E /* LoginViewModelTests.swift in Sources */,
 			);
